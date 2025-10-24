@@ -1,0 +1,38 @@
+/*
+ * Copyright (c) 2025 Vincent Franco
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "crosses.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <input/processors/report_rate_limit.dtsi>
+
+&default_transform {
+  col-offset = <6>;
+};
+
+&forty_two_transform {
+  col-offset = <6>;
+};
+
+&thirty_six_transform {
+  col-offset = <6>;
+};
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &gggw_crosses_54_layout;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
+
+&trackball_peripheral_listener {
+  status = "disabled";
+};
