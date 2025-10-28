@@ -72,6 +72,11 @@
             compatible = "zmk,input-split";
             reg = <0>;
         };
+
+        trackball_central_split: trackball_central_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
     };
 
     trackball_peripheral_listener: trackball_peripheral_listener {
@@ -83,7 +88,8 @@
     //right hand trackball
     trackball_central_listener: trackball_central_listener {
         compatible = "zmk,input-listener";
-        status = "disabled";
+        status = "okay";
+        device = <&trackball_central_split>;
     };
 };
 
